@@ -1,0 +1,13 @@
+<div>
+  <h1 class="{{ h1Class }}">Number of hobbies Added: {{ hobbyArr.length }}</h1>
+  <input type="text" [(ngModel)]="hobbie" placeholder="enter hobby here" />
+  <button (click)="addHobby()">Add hobby</button>
+  <pre>Input Value:{{ hobbie }}</pre>
+
+  <ol>
+    <li *ngFor="let hobby of hobbyArr; let i = index">
+      <app-hobby-list [hobbyName]="hobby" (clickedHobby)="removeHobby(i)">
+      </app-hobby-list>
+    </li>
+  </ol>
+</div>
